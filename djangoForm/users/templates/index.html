@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'global.css' %}">
+    <meta name="csrf_token" content="{{ csrf_token }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<p style="color: white; font-size: 20px; font-weight: bold; background-color: #00000080; width: fit-content; padding: 5px;">
+    <a href="/">Główna</a> / <a href="/delete">Usuwanie zawodników</a> / <a href="/users">Lista zawodników</a> </p>
+<header>Wypełnij formularz i dodaj zawodnika</header>
+<form action="{% url 'insert_player' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="imie"></label>
+    <input name="imie" id="imie" type="text" placeholder="Podaj imię zawodnika..." required/>
+
+    <label for="nazwisko"></label>
+    <input name="nazwisko" id="nazwisko" type="text" placeholder="Podaj nazwisko zawodnika..." required/>
+
+    <label for="telefon"></label>
+    <input name="telefon" id="telefon" type="tel" placeholder="Podaj nr. tel. zawodnika..." required/>
+
+    <label for="wiek"></label>
+    <input name="wiek" id="wiek" type="number" placeholder="Podaj wiek zawodnika..." required/>
+    <button type="submit">Dodaj</button>
+</form>
+</body>
+</html>

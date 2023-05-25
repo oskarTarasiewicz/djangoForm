@@ -1,0 +1,106 @@
+body {
+    padding: 20px;
+    font-family: Consolas, serif;
+    background: forestgreen url("bg.png") no-repeat fixed center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    font-weight: 900;
+    text-shadow: 2px 2px #ff0000;
+}
+
+ol {
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 45%;
+    list-style: num;
+    border-radius: 20px;
+    color: white;
+    background-color: #00000060;
+}
+
+li {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    gap: 30px;
+    background-color: #00000060;
+    padding: 20px;
+    min-height: 40vh;
+    border-radius: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    margin-top: 10vh;
+    transition: all 300ms;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    font-size: 25px;
+}
+
+select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    font-size: 24px;
+    color: white;
+    font-weight: 900;
+    transition: all 300ms;
+}
+
+.sel {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+option {
+    background-color: #00000080;
+    border: none;
+    font-size: 20px;
+}
+
+input[type="text"], input[type="number"], input[type="tel"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    font-size: 20px;
+    color: white;
+    transition: all 300ms;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="tel"]:focus {
+    outline: none;
+    padding: 5px;
+}

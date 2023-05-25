@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuwanie zawodników</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'global.css' %}">
+    <meta name="csrf_token" content="{{ csrf_token }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<p style="color: white; font-size: 20px; font-weight: bold; background-color: #00000080; width: fit-content; padding: 5px;">
+    <a href="/">Główna</a> / <a href="/delete">Usuwanie zawodników</a> / <a href="/users">Lista zawodników</a> </p>
+<header>Wybierz z listy jakiego zawodnika chcesz usunąć</header>
+<br/>
+<div class="sel">
+    <form action="{% url 'delete_player' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <select name="zawownik">
+            <ol>
+                {% for x in usrs %}
+                <option value="{{x.id}}">{{x.id}}. {{x.imie}} {{x.nazwisko}} [{{x.wiek}} lat]</option>
+                {% endfor %}
+            </ol>
+        </select>
+        <button style="margin-top: 40vh" type="submit">Usuń</button>
+    </form>
+</div>
+</body>
+</html>
